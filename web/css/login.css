@@ -1,0 +1,291 @@
+@import "../css/fonts.css";
+* {
+    margin: 0;
+    padding: 0;
+    /* 字体无法选中，选中会不太好看 */
+    user-select: none;
+    /* 把边框和内边距计算在预设高宽内 */
+    box-sizing: border-box;
+    font-family: zhushi;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    /* 直系子元素会变为 flex 元素 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background-color: #fff;
+    color: #181818;
+}
+
+/* 整个框架 */
+.shell {
+    position: relative;
+    width: 1000px;
+    min-width: 1000px;
+    height: 600px;
+    min-height: 600px;
+    padding: 25px;
+    background-color: #fff6d6;
+    box-shadow: 10px 10px 10px #eef0d8, -10px -10px 10px #fed247;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+    .shell {
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 1000px) {
+    .shell {
+        transform: scale(0.6);
+    }
+}
+
+@media (max-width: 800px) {
+    .shell {
+        transform: scale(0.5);
+    }
+}
+
+@media (max-width: 600px) {
+    .shell {
+        transform: scale(0.4);
+    }
+}
+
+/* 装载注册和登录 */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 600px;
+    height: 100%;
+    padding: 25px;
+    background-color: #fdfbda;
+    transition: 1.25s;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.unit{
+    position: relative;
+    width:350px;
+    height: 40px;
+    margin-bottom: 8px;
+}
+.unit input{
+    width:100%;
+    height:40px;
+}
+.getCode{
+    color:#fdfbda;
+        width:100px;
+        height:25px;
+        position: absolute;
+        top: 12px;
+        right: 8px;
+        border-radius: 25px;
+        background-color: #fff;
+        outline: none;
+        border: none;
+        font-size: 12px;
+        background-color: #e3a833;
+}
+
+.form_input {
+    width: 350px;
+    height: 40px;
+    margin: 4px 0;
+    padding-left: 25px;
+    font-size: 13px;
+    letter-spacing: 0.15px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    transition: 0.25s ease;
+    border-radius: 8px;
+
+}
+
+.form_input:focus {
+    box-shadow: inset #efc267 1px 1px 1px 1px;
+}
+
+.forget {
+    color: #181818;
+    font-size: 15px;
+    margin-top: 25px;
+    border-bottom: 1px solid #a0a5a8;
+    line-height: 2;
+}
+
+/* 控制所有标题 */
+.title {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 3;
+    color: #181818;
+    letter-spacing: 10px;
+}
+
+/* 控制所有按钮 */
+.button {
+    width: 180px;
+    height: 50px;
+    border-radius: 25px;
+    margin-top: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1.15px;
+    background-color: #e3a833;
+    color:#fdfbda;
+    box-shadow: 8px 8px 16px #f4d787;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.description {
+    font-size: 20px;
+    letter-spacing: 0.25px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* 注册页 */
+.part1 {
+    z-index: 100;
+    left: calc(100% - 600px);
+}
+
+/* 登录页 */
+.part2 {
+    z-index: 0;
+    left: calc(100% - 600px);
+}
+
+/* 左边的待切换盒子 */
+.switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 400px;
+    padding: 50px;
+    z-index: 200;
+    transition: 1.25s;
+    background-color: #fdfbda;
+    overflow: hidden;
+    box-shadow: 4px 4px 10px #fee69a, -4px -4px 10px #fee69a;
+}
+
+/* 装饰图案的效果 */
+.switch_circle {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: #e3a833;
+    box-shadow: inset 8px 8px 12px #e19116, inset -8px -8px 12px #fff;
+    bottom: -60%;
+    left: -60%;
+    transition: 1.25s;
+}
+
+/* 装饰图案的效果 */
+.circle2 {
+    top: -30%;
+    left: 60%;
+    width: 300px;
+    height: 300px;
+}
+
+.switch_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            width: 400px;
+            padding: 50px 55px;
+            transition: 1.25s;
+        }
+
+/* 常见的按钮效果 */
+.switch_btn:hover,
+.form_btn:hover {
+    transform: scale(0.985);
+    transition: 0.25s;
+}
+
+/* 短按和点击都要有动效 */
+.switch_btn:active,
+.switch_btn:focus {
+    transform: scale(0.97);
+    transition: 0.25s;
+}
+
+/* content change */
+.is_cc {
+    /* 动画将在 1.25 秒内完成一个完整的循环。 */
+    animation: is_cc 1.25s;
+}
+
+@keyframes is_cc {
+
+    /* 使元素的宽度在不同的关键帧之间发生变化 */
+    0%,
+    10%,
+    100% {
+        width: 400px;
+    }
+
+    30%,
+    50% {
+        width: 500px;
+    }
+}
+
+/* 移动到右边 */
+.is_changetR {
+    left: calc(100% - 400px);
+    transition: 1.25s;
+    transform-origin: left;
+}
+
+/* 移动到左边 */
+.is_changetL {
+    left: 0;
+    transition: 1.25s;
+    transform-origin: right;
+}
+
+.is_hidden {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    /* 延迟消失效果，形成动效 */
+    transition: 1.25s;
+}
+
+.is_z {
+    z-index: 200;
+    transition: 1.25s;
+}

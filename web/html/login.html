@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登陆界面喵</title>
+    <link href="../css/login.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+<body>
+    <div class="shell">
+        <div class="container part1" id="part1">
+            <form class="form">
+                <h2 class="form_title title">注册一个新账号</h2>
+                <div class="unit"><input type="text" class="form_input" id="phone" placeholder="请输入手机号">
+                    <button class="getCode" id="send-verification">发送验证码</button></div>
+                
+                <input type="text" class="form_input" id="verification" placeholder="请输入短信验证码">
+                <input type="password" class="form_input" id="password" placeholder="请设置密码">
+                <button class="button form_btn">注 册</button>
+            </form>
+        </div>
+        <div class="container part2" id="part2">
+            <form class="form">
+                <h2 class="form_title title">登录现有账号</h2>
+                <input type="text" class="form_input" placeholder="请输入手机号">
+                <input type="password" class="form_input" placeholder="请输入密码">
+                <button class="button form_btn">登 录</button>
+                <a class="forget">忘记密码？</a>
+            </form>
+        </div>
+        <div class="switch" id="switch-cnt">
+            <div class="switch_circle"></div>
+            <div class="switch_circle circle2"></div>
+            <div class="switch_container" id="switch-c1">
+                <h2 class="switch_title title">欢迎回来！</h2>
+                <p class="description">有账号了？快登录吧！</p>
+                <button class="button switch_btn">登 录</button>
+            </div>
+            <div class="switch_container is_hidden" id="switch-c2">
+                <h2 class="switch_title title">初次见面！</h2>
+                <p class="description">注册一个账号，开启学习之旅！</p>
+                <button class="button switch_btn">注 册</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>
