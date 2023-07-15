@@ -1,0 +1,28 @@
+package com.zlt.springbootdemo.vo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import java.util.Date;
+
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class UserVO {
+
+    private Integer userId;
+
+    private String phoneNum ;
+
+    private String userName;
+
+    private String userPwd;
+
+    private int userType;
+
+    private String salt;
+}
