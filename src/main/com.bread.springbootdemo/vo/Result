@@ -1,0 +1,40 @@
+package com.zlt.springbootdemo.vo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data // 默认会给当前类中的属性生成get和set方法
+@AllArgsConstructor // 生成带参构造方法
+@NoArgsConstructor // 生成无参构造方法
+@ToString //重写toString方法
+public class Result {
+
+    // 响应的结果状态 0 成功  1 失败  2未登录
+    private Integer code;
+
+    // 原因
+    private String message;
+
+    // 前端查询的数据存放的地方
+    private Object data;
+
+    public static Result ok (String message,Object data){
+        return  new Result(0,message,data);
+    }
+
+    public static Result ok (String message){
+        return  new Result(0,message,null);
+    }
+    public static Result notLogin (String message){
+        return  new Result(2,message,null);
+    }
+    public static Result notLogin (){
+        return  new Result(2,"当前未登录",null);
+    }
+
+    public static Result error (String message){
+        return  new Result(1,message,null);
+    }
+}
